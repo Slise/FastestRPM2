@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meter" translatesAutoresizingMaskIntoConstraints="NO" id="ox2-UY-aGB">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="4Fc-fP-WKa"/>
+                                    <constraint firstAttribute="height" constant="200" id="aNv-us-KRJ"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DB9-TH-InQ" appends="YES" id="K70-g9-Ms4"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dial" translatesAutoresizingMaskIntoConstraints="NO" id="bDs-CS-0WU" userLabel="Dial Image">
+                                <rect key="frame" x="217" y="217" width="165" height="165"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="165" id="ABB-WR-k96"/>
+                                    <constraint firstAttribute="height" constant="165" id="Pw4-5s-gQR"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ox2-UY-aGB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qgn-RG-Xa2"/>
+                            <constraint firstItem="bDs-CS-0WU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n10-29-W3m"/>
+                            <constraint firstItem="bDs-CS-0WU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vvt-9o-CAo"/>
+                            <constraint firstItem="ox2-UY-aGB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zAZ-Nq-vfr"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="DB9-TH-InQ" appends="YES" id="29P-Y1-Xpl"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="dialIMage" destination="bDs-CS-0WU" id="knH-E8-k5o"/>
+                        <outlet property="meterImage" destination="ox2-UY-aGB" id="zns-o0-H4e"/>
+                        <outlet property="panAction" destination="DB9-TH-InQ" id="jXw-70-1Bi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="DB9-TH-InQ">
+                    <connections>
+                        <action selector="panFinger:" destination="BYZ-38-t0r" id="Yxy-CH-f1o"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="245" y="305"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dial" width="400" height="400"/>
+        <image name="meter" width="300" height="300"/>
+    </resources>
 </document>
