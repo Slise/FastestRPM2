@@ -35,11 +35,19 @@
                                     <constraint firstAttribute="height" constant="165" id="Pw4-5s-gQR"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTL-Qn-ps7">
+                                <rect key="frame" x="275.5" y="82.5" width="49.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="bDs-CS-0WU" firstAttribute="top" secondItem="eTL-Qn-ps7" secondAttribute="bottom" constant="114" id="49B-lB-qCU"/>
                             <constraint firstItem="ox2-UY-aGB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qgn-RG-Xa2"/>
+                            <constraint firstItem="eTL-Qn-ps7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YhW-7R-CtI"/>
                             <constraint firstItem="bDs-CS-0WU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n10-29-W3m"/>
                             <constraint firstItem="bDs-CS-0WU" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vvt-9o-CAo"/>
                             <constraint firstItem="ox2-UY-aGB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zAZ-Nq-vfr"/>
@@ -50,6 +58,7 @@
                     </view>
                     <connections>
                         <outlet property="dialIMage" destination="bDs-CS-0WU" id="knH-E8-k5o"/>
+                        <outlet property="displaySpeed" destination="eTL-Qn-ps7" id="16n-0C-cZL"/>
                         <outlet property="meterImage" destination="ox2-UY-aGB" id="zns-o0-H4e"/>
                         <outlet property="panAction" destination="DB9-TH-InQ" id="jXw-70-1Bi"/>
                     </connections>
